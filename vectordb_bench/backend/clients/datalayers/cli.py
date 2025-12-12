@@ -28,7 +28,7 @@ class DatalayersIndexTypedDict(CommonTypedDict):
         click.option(
             "--index-type",
             type=click.Choice(
-                ["HNSW", "FLAT", "IVF_FLAT", "IVF_PQ", "IVF_RQ"],
+                ["HNSW", "FLAT", "IVF_FLAT", "IVF_PQ", "IVF_RQ", "IVF_HNSW"],
                 case_sensitive=False,
             ),
             default="FLAT",
@@ -43,6 +43,7 @@ _index_type_mapping = {
     "IVF_PQ": IndexType.IVFPQ,
     "IVF_RQ": IndexType.IVF_RABITQ,
     "HNSW": IndexType.HNSW,
+    "IVF_HNSW": IndexType.IVF_HNSW,
 }
 
 class DatalayersTypedDict(DatalayersConnectionTypedDict, DatalayersIndexTypedDict):

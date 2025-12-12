@@ -103,7 +103,6 @@ class Datalayers(VectorDB):
                 raise ValueError("labels_data length must match metadata length when provided")
 
             insert_count = 0
-            log.info("Start inserting %d embeddings into Datalayers table %s", len(embeddings), self.table_name)
             # Insert in batches
             for batch_start in range(0, len(embeddings), self.load_batch_size):
                 batch_end = min(batch_start + self.load_batch_size, len(embeddings))

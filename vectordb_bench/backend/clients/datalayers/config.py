@@ -80,6 +80,8 @@ class DatalayersIndexConfig(BaseModel, DBCaseConfig):
             return "IVF_RQ"
         if self.index == IndexType.HNSW:
             return "HNSW"
+        if self.index == IndexType.IVF_HNSW:
+            return "IVF_HNSW"
         if self.index == IndexType.NONE:
             return "NONE"
         msg = f"Index type {self.index} is not supported for Datalayers!"
